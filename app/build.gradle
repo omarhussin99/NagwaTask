@@ -16,6 +16,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField ("String","BASE_URL",BASE_URL)
+
     }
 
     buildTypes {
@@ -33,6 +36,9 @@ android {
     }
     buildFeatures {
         viewBinding true
+    }
+    kapt {
+        correctErrorTypes true
     }
 }
 
@@ -78,10 +84,11 @@ dependencies {
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
     //Dagger
-    implementation 'com.google.dagger:dagger-android:2.35.1'
-    implementation 'com.google.dagger:dagger-android-support:2.21'
-    kapt 'com.google.dagger:dagger-android-processor:2.21'
+    implementation 'com.google.dagger:dagger:2.38.1'
     kapt 'com.google.dagger:dagger-compiler:2.38.1'
+    implementation 'com.google.dagger:dagger-android:2.35.1'
+    implementation 'com.google.dagger:dagger-android-support:2.21' // if you use the support libraries
+    kapt 'com.google.dagger:dagger-android-processor:2.21'
 
     // RxJava, RxAndroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
